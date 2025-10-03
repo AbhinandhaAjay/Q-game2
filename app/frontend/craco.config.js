@@ -1,4 +1,5 @@
-// Load configuration from environment or config file
+// D:\Q-game2\app\frontend\craco.config.js
+
 const path = require('path');
 
 // Environment variable overrides
@@ -7,6 +8,17 @@ const config = {
 };
 
 module.exports = {
+  // 1. ADD THE STYLE/POSTCSS BLOCK HERE
+  // Add this 'style' block to your existing craco.config.js
+style: {
+  postcss: {
+    plugins: [
+      require('@tailwindcss/postcss'), // ✅ Use the dedicated PostCSS package
+      require('autoprefixer'),
+    ],
+  },
+},
+  // ----------------------------------------------------
   webpack: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
